@@ -1,0 +1,352 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.item1 { grid-area: header; }
+.item2 { grid-area: main; }
+.item3 { grid-area: footer;  }
+
+.grid-container {
+  display: inline-grid;
+  grid-template-areas:
+    'header header header header header header header '
+    'main main main main main main main'
+    'footer footer footer footer footer footer footer';
+ /*need to remove the next 3*/
+  grid-gap: 5px;
+  /*background-color: #2196F3;*/
+  padding: 5px;
+  max-width: auto;
+  /*max-height: auto;*/
+}
+
+#find, #become{
+  margin-left: 8rem;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
+  color: #504658;
+  widows: 360px;
+  float: left;
+}
+
+/*********************** header ************************/
+.flex-container {
+    display: flex;
+    justify-content: center;
+   /* background-color: DodgerBlue;*/
+    flex-direction: wrap;
+    align-items: baseline;
+    
+  }
+  
+  .flex-container > div {
+    /*background-color: #f1f1f1;*/
+    width: 100px;
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 10px;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    
+    
+  }
+  .show-menu-btn, .hide-menu-btn{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.show-menu-btn{
+    float: right;
+}
+
+.show-menu-btn img{
+    line-height: 150px;
+    width: 2rem;
+}
+
+/* This is functionality Part*/
+#chk{
+    position: absolute;
+    visibility: hidden;
+    z-index: -1;
+}
+
+/* Now Media Queries*/
+@media screen and (max-width:800px){
+    .show-menu-btn, .hide-menu-btn{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        /* Full screen Side Hamburger menu*/
+        width: 100%;
+        height: 100%;
+        right: -100%;
+        top: -5px;
+        background: lightblue;
+        padding: 80px 0px;
+        text-align: center;
+        line-height: normal;
+        color: black;
+        z-index: 10;
+    }
+
+    .menu a{
+        display: block;
+        padding: 50px;
+    }
+
+    .hide-menu-btn{
+        position: absolute;
+        top: 40px;
+        right: 30px;
+    }
+
+    .hide-menu-btn img{
+        width: 2rem;
+    }
+
+    /* Main Functionality part*/
+    #chk:checked ~ .menu{
+        right: 0;
+    }
+
+    #find,#become{
+      margin-left: 5rem;
+    }
+}
+  ul{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: none;
+    position: -webkit - sticky;
+    position: sticky;
+    top: 0;
+    color: black;
+}
+li{
+    float: left;
+}
+  a{
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+   
+}
+li a:hover{
+    background-color:teal;
+    color: black;
+    
+}
+.active {background-color: turquoise; 
+border-radius: 20px;}
+
+/*********************** main ************************/
+.grid-container2 {
+  display: inline-grid;
+  justify-content: center;
+  grid-template-columns: auto auto auto; /*Make the grid smaller than the container*/
+  grid-gap: 0px;
+  /*background-color: #2196F3;*/
+  padding: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  max-width: auto;
+  max-height: auto;
+}
+
+.grid-container2 > div {
+  /*background-color: rgba(255, 255, 255, 0.8);*/
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+  align-content: center;
+}
+
+.button {
+  background-color: whitesmoke; /* Green */
+  border: none;
+  color: #94d3ac;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 2px 2px #75b79e;
+  
+}
+
+.button1 {
+  background-color: #008CBA;
+  color: black; 
+  border: 2px solid  #008CBA;
+}
+
+.button1:hover {
+  opacity: .8;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.bbox{
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 2px 2px 10px black;
+  color: #504658;
+  padding: 25px;
+
+}
+
+/********************* profile card ***********************/
+.card{
+  background-color: rgba(247, 22, 97, 0.521);
+  height: 300px;
+  width: 310px;
+  position: absolute;
+  border-radius: 8px;
+  box-shadow: 0 0 20px 10px rgba(233 , 144 ,7 ,0.7); 
+  /*margin-left: 27rem;
+  margin-bottom: 5rem;*/
+  padding-top: 5rem;
+}
+.info{
+  
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.name{
+  font-size: 20px;
+  font-family: "Raleway" , sans-serif;
+  color: rgb(243, 32, 85);
+  position: absolute;
+  letter-spacing: 1px;
+  font-weight: 600;
+  top:40px;
+}
+.prof{
+  font-size: 18px;
+  position: absolute;
+  top: 70px;
+  font-family: "Work Sans" , sans-sarif;
+  color: rgba(243, 32, 85, 0.562);
+}
+.divider{
+  background-color: rgba(207, 53, 174, 0.459);
+  height: 1.5px;
+  width: 50px;
+  position: absolute;
+  top:130px;
+}
+.bio{
+  position: absolute;
+  top: 140px;
+  color:rgba(243, 32, 85, 0.562);
+  text-align: center;
+  font-size: 18px;
+  font-family: "Work Sans" , sans-sarif;
+  line-height: 15px;
+  padding: 10px;
+}
+
+.photo{
+  height: 100%;
+  width: 100%;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1Vm9d-NDPP4zlEuRojm5iLlIBxhzoenv6Ax3dtC4Mzi_Kfubg);
+  position: absolute;
+  bottom: 0;
+  background-size: 100% 100%;
+  border-radius: 8px;
+  transition: 1s;
+ 
+  
+}
+.card:hover .photo{
+  transform: scale(0.5 , 0.35) translatey(-650px);
+  background-size: 100% 150% ;
+  background-position: 0 -25px;
+  border-radius: 60%;
+  border: groove;
+  opacity: .9;
+}
+
+/*********************** footer ************************/
+.flex-container2 {
+    display: flex;
+    flex-direction: wrap;
+    justify-content: center;
+    align-items: baseline;
+    padding: 0px;
+    padding-top: 5px;
+    padding: 15px;
+    margin: 0 20px;
+    }
+ 
+ .flex-container2 > div {
+    margin: 5px;
+    padding: 0px;
+    font-size: 5px;
+    background-color: none;
+    }
+
+ 
+  div a
+    {
+        text-decoration: none;
+    }
+ 
+  div a:hover{
+     background-color: transparent;
+     opacity: 25%;
+    }
+ 
+    .gotopbtn{
+      position: fixed;
+      width: 50px;
+      height: 60px;   
+      right: 50px;   
+      background: #27ae5fa4;
+      color: wheat;
+      bottom: 10px;
+      align-items: center;
+      text-decoration: none;
+      text-align: center;
+      line-height: 40px;
+      font-size: 30px;
+      border-radius: 10px;
+    }
